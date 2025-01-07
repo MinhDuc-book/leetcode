@@ -2,7 +2,7 @@ class Solution {
 public:
     bool isPalindrome(int x) {
         int temp = x; // lưu lại giá trị của biến x
-        long reverse = 0; // lưu giá trị khời taok của số đảo ngược là 0
+        long reverse = 0; // lưu giá trị của số đảo ngược là 0 và sau mỗi lần lặp sẽ thay dổi
 
         //x < 0  thì không phải số nghịch đảo
         while (x > 0) {
