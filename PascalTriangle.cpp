@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<vector<int>> generate(int numRows) {
-        vector<vector<int>> pascal = generate(numRows-1); // gọi đệ quy hàm lưu vào cho pascal
+        
         vector<int> rows = (numRows,1); // khởi tạo 1 hảng với gtri bdau là 1, kích cỡ numRow 
         // những lệnh if numRows = 1 hoặc = 0 làm tiền đề để thực hiện đệ quy
         //nếu cần in ra hàng 0 thì k có gì cả
@@ -12,6 +12,11 @@ public:
         if (numRows == 1) {
             return {{1}};
         }
+
+        //chuyển hàm gọi đệ quy xuống dưới vì nó phải được kiểm tra điều kiện kết thúc vòng lặp
+        //nếu để ở trên thì gây ra vòng lặp vô hạn vì nó chạy hàm đệ quy trước rồi mới đưa ra điều kiện
+        vector<vector<int>> pascal = generate(numRows-1); // gọi đệ quy hàm lưu vào cho pascal
+        
         //vòng lặp để thực hiện theo công thức của tam giác pascal
         //ngoài ra vòng lặp còn dùng để chạy đệ quy
         for (int i = 1; i <  numRows-1; i = i+1) {
