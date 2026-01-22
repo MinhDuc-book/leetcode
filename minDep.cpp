@@ -18,10 +18,6 @@ public:
             return 0;
         }
 
-        if (root -> left == NULL and root -> right == NULL) {
-            return 1;
-        }
-
         int minLeft = minDepth(root -> left);
         int minRight = minDepth(root -> right);
 
